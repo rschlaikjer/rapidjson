@@ -1420,7 +1420,7 @@ private:
     class NumberStream<InputStream, true, false> : public NumberStream<InputStream, false, false> {
         typedef NumberStream<InputStream, false, false> Base;
     public:
-        NumberStream(GenericReader& reader, InputStream& is) : Base(reader, is), stackStream(reader.stack_) {}
+        NumberStream(GenericReader& reader, InputStream& s) : Base(reader, s), stackStream(reader.stack_) {}
 
         RAPIDJSON_FORCEINLINE Ch TakePush() {
             stackStream.Put(static_cast<char>(Base::is.Peek()));
